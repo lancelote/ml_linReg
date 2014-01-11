@@ -1,0 +1,7 @@
+# Training data #
+#################
+data.mat
+
+# Octave crash dump #
+#####################
+octave-core
