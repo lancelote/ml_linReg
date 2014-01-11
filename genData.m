@@ -1,4 +1,5 @@
-%% =============== Data generation for linear regression testing ===============
+%% Data generation for linear regression testing %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function genData(m)
 
