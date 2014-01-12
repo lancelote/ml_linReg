@@ -3,15 +3,17 @@
 
 function genData(m)
 
-	%% Data generation
+	%% Data generation %%
+	%%%%%%%%%%%%%%%%%%%%%
 
 	% Random X (m - # of training examples)
-	X = rand(m, 1);
+	X = sort(rand(m, 1));
 
 	% Y calculation
 	Y = f(X);
 
-	%% Formate and save data 
+	%% Formate and save data %%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	% Output matrix formation
 	data = cat(2, X, Y);

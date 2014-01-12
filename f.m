@@ -1,8 +1,9 @@
-%% ============================== Function set-up ==============================
+%% Function set-up %%
+%%%%%%%%%%%%%%%%%%%%%
 
-function y = f(x)
+function Y = f(X)
 
 	% target function
-	y = 1 + 2 * x;
+	Y = 1 + 2 * X + 5 * X .^ 2;
 	
 end

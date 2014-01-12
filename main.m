@@ -1,7 +1,14 @@
+%% Linear regression for one variable %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %% data loading %%
 %%%%%%%%%%%%%%%%%%
 
 fprintf('Loading data...');
+
+% load data.mat;
+% X = data(:,1);
+% Y = data(:,2);
 
 load data.mat;
 X = data(:,1);
@@ -15,12 +22,12 @@ pause;
 %% gradient descent %%
 %%%%%%%%%%%%%%%%%%%%%%
 
-X = [ones(m, 1), X]; % adding a column of ones
-theta = zeros(2, 1); % initialize theta values
+X = [ones(m, 1), X, X .^ 2]; % create proper X vector
+theta = zeros(3, 1); % initialize theta values
 
 % gradient descent settings
 iterations = 1000;
-alpha = 0.1;
+alpha = 1;
 
 % compute initial cost
 J = computeCost(X, Y, theta, m);
@@ -34,8 +41,12 @@ fprintf('Perfoming gradient descent...')
 
 [theta, J_temp] = gradientDescent(X, Y, theta, m, alpha, iterations);
 
-fprintf(' done.\n')
+fprintf(' done.\n');
+fprintf('Result cost is %f\n', J_temp(iterations));
 fprintf('Theta found by gradient descent: ');
-fprintf('%f %f \n', theta(1), theta(2));
+fprintf('%f %f %f \n', theta(1), theta(2), theta(3));
 fprintf('Press Enter to continue...\n');
 pause;
+
+%% Cost function visualizing %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
